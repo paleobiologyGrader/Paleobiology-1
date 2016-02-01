@@ -1,0 +1,122 @@
+
+
+Lottery numbers: 1 11 22 33 44  Powerball: 25
+
+draw<-function(go){sample(c(1:69),size=5)}
+power<-function(go){sample(c(1:26),size=1)}
+
+one<-sample(c(1:69),size=1000000,replace=TRUE)
+two<-sample(c(1:69),size=1000000,replace=TRUE)
+three<-sample(c(1:69),size=1000000,replace=TRUE)
+four<-sample(c(1:69),size=1000000,replace=TRUE)
+five<-sample(c(1:69),size=1000000,replace=TRUE)
+six<-sample(c(1:26),size=1000000,replace=TRUE)
+
+UrNotLucky<-function(go){one<-sample(c(1:69),size=1000000,replace=TRUE)
+two<-sample(c(1:69),size=1000000,replace=TRUE)
+three<-sample(c(1:69),size=1000000,replace=TRUE)
+four<-sample(c(1:69),size=1000000,replace=TRUE)
+five<-sample(c(1:69),size=1000000,replace=TRUE)
+six<-sample(c(1:26),size=1000000,replace=TRUE)
+data.frame(one,two,three,four,five,six)}
+
+UrNotLucky<-matrix(data=({one<-sample(c(1:69),size=1000000,replace=TRUE)
+two<-sample(c(1:69),size=1000000,replace=TRUE)
+three<-sample(c(1:69),size=1000000,replace=TRUE)
+four<-sample(c(1:69),size=1000000,replace=TRUE)
+five<-sample(c(1:69),size=1000000,replace=TRUE)
+six<-sample(c(1:26),size=1000000,replace=TRUE),nrow=1000000,ncol=6)
+matrix(one,two,three,four,five,six)
+
+
+MyNumbers<-c(1,11,22,33,44,25)
+rows<-(c(1:1000000))
+
+one<-sample(c(1:69),size=1000000,replace=TRUE)
+two<-sample(c(1:69),size=1000000,replace=TRUE)
+three<-sample(c(1:69),size=1000000,replace=TRUE)
+four<-sample(c(1:69),size=1000000,replace=TRUE)
+five<-sample(c(1:69),size=1000000,replace=TRUE)
+six<-sample(c(1:26),size=1000000,replace=TRUE)
+
+UrNotLucky<-data.frame(one,two,three,four,five,six)
+
+StillNotLucky<-function(MyNumbers){
+for(index in rows){
+if (UrNotLucky[index,]==(MyNumbers)){
+print("True")}}}
+
+MyMatrix<-matrix(NA,nrow=1000000,ncol=6)
+MyMatrix[ , 6] <- sample(c(1:26),1000000,replace=TRUE)
+for (index in 1:1000000) {
+    MyMatrix[index,c(1,2,3,4,5)] <- sample(c(1:69),5,replace=FALSE)
+    }
+MyNumbers<-c(1,2,3,4,5,6)
+didiwin<-function(MyNumbers){
+for (index in 1:dim(MyMatrix)[1]) {
+   GameOutcome[index]<-MyMatrix[index,]==MyNumbers
+    }}
+GameOutcome<-array(data=NA,dim=1000000)
+which(GameOutcome)
+
+
+
+
+
+
+
+
+
+Expert Question 4
+RandomNormal<-rnorm(70,mean=34.88571,sd=13.70665)
+
+mean(RandomNormal)-mean(precip)
+[1] 0.1946061
+
+compareprecip<-function(RandomNormal,precip,Iterations=100){
+Barrel<-c(RandomNormal,precip)
+ReplicatedMeans<-array(data=NA,dim=Iterations)
+for (Counter in 1:Iterations) {
+NewRandomNormal<-sample(Barrel,length(RandomNormal),replace=TRUE)
+Newprecip<-sample(Barrel,length(precip),replace=TRUE)
+RandomNormalMean<-mean(NewRandomNormal)
+precipMean<-mean(Newprecip)
+ReplicatedMeans[Counter]<-RandomNormalMean-precipMean}
+return(ReplicatedMeans)}
+
+ReplicationResults<-compareprecip(RandomNormal,precip,100)
+length(which(ReplicationResults>(0.1946061)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
