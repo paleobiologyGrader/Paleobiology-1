@@ -1,0 +1,220 @@
+Lab 4 
+ source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/communityMatrix.R")
+ source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/cullMatrix.R")
+ DataPBDB<-downloadPBDB(Taxa=c("Bivalvia","Gastropoda"),StartInterval="Cambrian",StopInterval="Pleistocene")
+ DataPBDB<-cleanGenus(DataPBDB)
+ Epochs<-downloadTime(Timescale="international epochs")
+ DataPBDB<-constrainAges(DataPBDB,Epochs)
+ PresencePBDB<-presenceMatrix(DataPBDB,SampleDefinition="early_interval")
+ PresencePBDB<-cullMatrix(PresencePBDB,minOccurrences=5,minDiversity=24)
+
+Problem Set 1
+1. 
+#First we will separate the dataset into matrices for each epoch.
+MioceneBivalves<-PresencePBDB["Miocene",]
+EarlyJurassicBivalves<-PresencePBDB["Early Jurassic",]
+LateCretaceousBivalves<-PresencePBDB["Late Cretaceous",]
+PennsylvanianBivalves<-PresencePBDB["Pennsylvanian",]
+
+#Then, the number of unique genera present should be the entries with "1"
+MioceneSurvivors<-which(MioceneBivalves==1)
+EarlyJurassicSurvivors<-which(EarlyJurassicBivalves==1)
+LateCretaceousSurvivors<-which(LateCretaceousBivalves==1)
+PennsylvanianSurvivors<-which(PennsylvanianBivalves==1)
+
+#Finally, we use the length() function to find out how many genera survived.
+length(MioceneSurvivors)
+length(EarlyJurassicSurvivors)
+length(LateCretaceousSurvivors)
+length(PennsylvanianSurvivors)
+
+
+#Miocene:603
+#Early Jurassic:169
+#Late Cretaceous:375
+#Pennsylvanian:133
+
+2.
+#Each row represents a geologic epoch. How many rows are there?
+dim(PresencePBDB)
+
+#There are 29 epochs in this dataset.
+
+3.
+#First, we will narrow the matrix to see only the presence or absence of Mytilus.
+FindMytilus<-PresencePBDB[,"Mytilus"]
+
+#Then, find out in which epochs Mytilus appears.
+FoundMytilus<-which(FindMytilus==1)	
+
+#The following epochs contain Mytilus.
+Pridoli   
+Early Devonian      
+Cisuralian  
+Late Jurassic                                                
+Eocene 
+Late Cretaceous
+Early Cretaceous 
+Middle Jurassic                                         
+Paleocene
+Oligocene  
+Miocene 
+Early Jurassic                                        
+Pleistocene 
+Middle Triassic 
+Late Triassic   
+Pliocene                              
+Early Triassic 
+
+4.
+#Any epochs that are between Mytilus-containing epochs must have had it, because it reappears later in the record.
+#By that logic, the following epochs must contain Mytilus:
+Middle Devonian
+Late Devonian
+Mississippian
+Pennsylvanian
+Guadalupian
+Lopingian
+
+Problem Set 2
+1. #First, we find how many unique genera intersect within the samples.
+BivalveComparison<-PresencePBDB[c("Miocene","Pleistocene"), ]
+IntersectionBivalves<-which(apply(BivalveComparison,2,sum)>0)
+length(IntersectionBivalves)
+[1] 616
+
+#Then, we need to find which genera are shared.
+SharedBivalves<-which(apply(BivalveComparison,2,sum)==2)
+length(SharedBivalves)
+[1] 510
+
+#So, we have the intersection of the two genera (616)
+#and the number of shared genera (510). 
+#Given this, the Jaccard similarity index must be 510/(616).
+510/616
+[1] 0.8279221
+
+2. Because 1 indicates complete similarity in a similarity index and complete disssimilarity in a distance index,
+the Jaccard distance index is simply the inverse of the similarity value.
+1-0.8279221
+[1] 0.1720779
+
+3. install.packages("vegan")
+library(vegan)
+vegdist(BivalveComparison, method="jaccard",binary=FALSE,diag=FALSE,upper=FALSE,na.rm=FALSE)
+ 0.1720779
+
+4. #This seems tiring. Let's automate it!
+EpicEpochs<-function(row="Epoch1",column="Epoch2"){
+Comparison<-PresencePBDB[c(row,column),]
+Intersection<-which(apply(Comparison,2,sum)>0)
+Shared<-which(apply(Comparison,2,sum)==2)
+Numerator<-length(Shared)
+Denominator<-length(Intersection)
+Similarity<-(Numerator/Denominator)
+Results<-(1-Similarity)
+Results
+}
+
+EpicEpochs("Pleistocene","Pliocene")
+[1] 0.1269297          
+ EpicEpochs("Pleistocene","Miocene")
+[1] 0.1720779
+EpicEpochs("Pleistocene","Oligocene")
+[1] 0.269103
+EpicEpochs("Pleistocene","Eocene")
+[1] 0.2187005
+EpicEpochs("Pleistocene","Paleocene")
+[1] 0.4444444
+EpicEpochs("Pliocene","Miocene")
+[1] 0.08496732
+EpicEpochs("Pliocene","Oligocene")
+[1] 0.1896839
+EpicEpochs("Pliocene","Eocene")
+[1] 0.1339713
+EpicEpochs("Pliocene","Paleocene")
+[1] 0.3791469
+EpicEpochs("Miocene","Oligocene")
+[1] 0.1606557
+EpicEpochs("Miocene","Eocene")
+[1] 0.08585056
+EpicEpochs("Miocene","Paleocene")
+[1] 0.3333333    
+EpicEpochs("Oligocene","Eocene")
+[1] 0.19063
+EpicEpochs("Oligocene","Paleocene")
+[1] 0.4104235
+EpicEpochs("Eocene","Paleocene")
+[1] 0.3338583
+
+#The Pleistocene and Paleocene are the most dissimilar.
+
+Problem Set 3
+1. RandomEpochs<-PresencePBDB[c("Pliocene","Oligocene","Paleocene","Early Cretaceous","Late Jurassic",
+"Middle Jurassic"),]
+
+2. #EpicEpochs strikes again!
+EpicEpochs("Pliocene","Oligocene")
+[1] 0.1896839
+EpicEpochs("Pliocene","Paleocene")
+[1] 0.3791469
+EpicEpochs("Pliocene","Early Cretaceous")
+[1] 0.7462908
+EpicEpochs("Pliocene","Late Jurassic")
+[1] 0.8652695
+EpicEpochs("Pliocene","Middle Jurassic")
+[1] 0.8852459
+EpicEpochs("Oligocene","Paleocene")
+[1] 0.4104235
+EpicEpochs("Oligocene","Early Cretaceous")
+[1] 0.7480315
+EpicEpochs("Oligocene","Late Jurassic")
+[1] 0.8653846
+EpicEpochs("Oligocene","Middle Jurassic")
+[1] 0.8814103
+EpicEpochs("Paleocene","Early Cretaceous")
+[1] 0.6400742
+EpicEpochs("Paleocene","Late Jurassic")
+[1] 0.7902622
+EpicEpochs("Paleocene","Middle Jurassic")
+[1] 0.7931689
+EpicEpochs("Early Cretaceous","Late Jurassic")
+[1] 0.4703947
+EpicEpochs("Early Cretaceous","Middle Jurassic")
+[1] 0.4883721
+EpicEpochs("Late Jurassic","Middle Jurassic")
+[1] 0.2962963
+
+3. The most dissimilar epochs are Pliocene and Middle Jurassic.
+	1. Pliocene
+	2. Oligocene
+	3. Paleocene
+	4. Early Cretaceous
+	5. Late Jurassic
+	6. Middle Jurassic
+4. The dissimilarities are caused by the ages of the different epochs. The Pliocene, for example, is temporally
+closer to the Oligocene than to the Paleocene. The Paleocene, in turn, is closer to the Pliocene than, say, the 
+Late Jurassic. 
+
+5. Separating the Early Cretaceous and the Paleocene is the Cretaceous-Paleogene extinction in which 75% of the
+planet's life (including the dinosarus) was wiped out. Bivalves and snails were likely greatly impacted. 
+
+
+Problem Set 4
+1. Ordovician<-downloadPBDB(Taxa=c("Animalia"),StartInterval="Ordovician",StopInterval="Ordovician")
+#I looked ahead. We are going to set aside some geoplate data for later.
+Geoplates<-Ordovician[,c("paleolng","paleolat","geoplate")]
+
+2. Ordovician<-cleanGenus(Ordovician)
+
+3. AnimalMatrix<-presenceMatrix(Ordovician,SampleDefinition="geoplate")
+AnimalMatrix<-cullMatrix(AnimalMatrix,minOccurrences=2,minDiversity=25)
+
+4. AnimalDCA<-decorana(AnimalMatrix,ira=0)
+plot(AnimalDCA,display="sites")
+Geoplates[,geoplates=291]
+#I am convinced that the geographic proximity of geoplates to each other is the driving factor in their relative
+#similarity on the DCA. For example, geoplates 304 and 305 are very close to one another on the plot, and the 
+#samples in those geoplates also share similar paleocoordinates. It is worth noting that the distribution of
+#geoplates along the plot are probably not the result of a wedge effect, because there are two distinct variables
+#that separate the geoplates: paleolatitude and paleolongutide. 
