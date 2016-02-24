@@ -1,7 +1,10 @@
 Nicholas Boulanger
 Global Biodiversity Scenarios for the Year 2100
 
-1. Article Summary
+> 10/10
+
+## Article Summary
+
 This paper documents an attempt to construct scenarios for change in biodiversity worldwide by the year 2100. 
 The scenarios compare a suite of drivers of biodiversity loss, including land-use change, climate change,
 deposition of nitrogen, and global atmospheric carbon dioxide concentrations. The relative impacts of these drivers
@@ -19,28 +22,32 @@ uncertainty is the discrepancy between the three different models. In some cases
 driver makes sense. The paper provides an example: if a tropical forest is cleared and an exotic crop is planted,
 virtually all native species will be extirpated regardless of nitrogen deposition or climate change. 
 
-2. Things you liked about the paper
+## Things you liked about the paper
+
 This article is rich in biome-level predictions. If, for example, the reader is concerned specifically with the
 effect of a given driver on a given biome, they will likely be able to find a reasonable prediction of that 
 driver's severity for that ecosystem simply by reading the paper's text. These smaller predictions rest within
 a framework of global-scale predictions that are by necessity less specific, but still useful. The article 
 succeeds in its basic goal of creating and interpreting a model. 
 
-3. Things you did not like about the paper
+## Things you did not like about the paper
+
 There are a lot of assumptions made here. It seems as though half the statements in the paper begin with, "we 
 assume that..." It is understandable that a scenario designed to predict an extraordinarily complex biological
 system for almost a century into the future would have to make some assumptions, but there are so many
-that one eventually starts to lose faith in the predictive accuracy of the model. It is a little surprising that 
+that one eventually starts to lose faith in the predictive accuracy of the model. `Many of your classmates felt the same way` It is a little surprising that 
 marine ecosystems are not examined at all in this study, especially when freshwater ecosystems were included.
 Of course, truly accurate scenarios for oceans' responses to global biodiversity change would probably require a 
 separate scenario (and article) to themselves, but what about their
 effects on the terrestrial and freshwater systems? If any improved or further studies are carried out, 
 incorporating marine systems would be my first recommendation.    
 
-4. Evaluate the graphs and figures (if any)
+## Evaluate the graphs and figures (if any)
 This article has three figures: Figure 1 is a bar graph for the relative global importance of each driver of
 change in biodiversity; Figure 2 is a similar bar graph, but divided into a separate graph for each biome; Figure 3
 is a series of three world maps describing the expected change in biodiversity. Figures 1 and 2 are simple
 and easy to understand. Figure 3, however, is very strange: what are the units of biodiversity change? Without
 understanding what the numbers mean, the colors don't have any real significance, so the whole graph is a waste of 
 space. 
+
+> Harsh words!
