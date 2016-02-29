@@ -1,0 +1,113 @@
+source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/communityMatrix.R")
+source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/cullMatrix.R")
+
+DataPBDB<-downloadPBDB(Taxa=c("Plantae","Animalia"),StartInterval="Cambrian",StopInterval="Cambrian")
+DataPBDB<-cleanGenus(DataPBDB)
+
+MacroPBDB<-macrostratMatch(DataPBDB)
+
+Problem Set 1
+1)
+#Since each occurrence is a row, we simply find the difference in the number of rows each matrix has.
+> dim(DataPBDB)
+[1] 34166    26
+> dim(MacroPBDB)
+[1] 9013   13
+34166-9013
+[1] 25153
+
+2)
+#Much of the lost data was likely collected from areas outside North America.
+
+GenusMatrix<-presenceMatrix(MacroPBDB,SampleDefinition="unit_name",TaxonRank="genus")
+OrderMatrix<-presenceMatrix(MacroPBDB,SampleDefinition="unit_name",TaxonRank="order")
+
+Problem Set 2
+1) 
+library(vegan)
+dim(OrderMatrix)
+[1] 157  84
+strata<-array(c(1:157))
+
+Richness<-array(data=NA,dim=157)
+
+OrderRichness<-function(OrderMatrix){
+	Richnes<-vector()
+	for(Index in strata) {
+		Richness[Index]<-specnumber(OrderMatrix[Index,])
+		}
+	names(Richness)<-dimnames(OrderMatrix)[[1]]
+	return(Richness)
+	}
+
+OrderLevelRichness<-(OrderRichness(OrderMatrix))
+OrderLevelRichness<-sort(OrderLevelRichness)
+
+OrderLevelRichness[147:157]
+     Harkless Fm       Forteau Fm     Parker Slate   Snowy Range Fm 
+              14               14               16               16 
+     Weymouth Fm      Langston Fm    Wheeler Shale Marjum Limestone 
+              16               17               18               19 
+      Stephen Fm       Kinzers Fm       Chancellor 
+              23               24               27 
+CandidateUnits<-(c("Forteau Fm","Parker Slate","Snowy Range Fm","Weymouth Fm","Langston Fm",
+"Wheeler Shale","Marjum Limestone","Stephen Fm","Kinzers Fm","Chancellor"))
+
+
+2)
+GenusFrequencies<-apply(GenusMatrix,2,sum)
+
+3)
+hist(GenusFrequencies)
+
+4) 
+#This is the familiar "hollow curve" pattern we have seen in lecture and in the literature.
+
+5)
+sort(GenusFrequencies)
+median(GenusFrequencies)
+[1] 2
+RareGenera<-GenusFrequencies[which(GenusFrequencies<=2)]
+
+Problem Set 3
+
+1)
+CandidateMatrix<-GenusMatrix[CandidateUnits,]
+
+2)
+percentRare<-function(CandidateUnit,RareGenera) {
+    CandidateUnit<-CandidateUnit[CandidateUnit>0] # Limit the data only to taxa prensent (non-zero) in the unit
+    PercentIn<-length(which(names(CandidateUnit) %in% names(RareGenera))) # Find the number of genera in the
+# CandidateUnit that are in RareGenera
+    TotalGenera<-length(CandidateUnit) # Find the total number of genera in the unit
+    PercentShared<-PercentIn/TotalGenera
+    return(PercentShared)
+    }
+
+PercentShared<-apply(CandidateMatrix,1,percentRare,RareGenera)
+sort(PercentShared)
+#Marjum Limestone, Forteau Fm, Chancellor, and Weymouth Fm are the four strata that hold the most rare taxa.
+#Since this is a characteristic of Lagerstatten, these are the four best candidates.
+
+3)
+tail(OrderLevelRichness)
+#Chancellor, the most diverse stratum and the second in preservation of rare taxa, is a lagerstatten.
+#The Chancellor Group belongs to the famous Burgess Shale Formation, one of the earliest fossil beds to contain
+#traces of soft body parts. Among the Cambrian taxa discovered there is Hallucigenia, the bizarre creature we 
+#discussed on Monday in lecture.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
