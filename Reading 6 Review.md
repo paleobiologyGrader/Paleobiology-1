@@ -2,7 +2,10 @@ Nicholas Boulanger
 Valentine, J.W.(1989). How good was the fossil record? Clues from the Californian Pleistocene. Paleobiology,
 15(2), pp. 83--94. 
 
-1) Article Summary
+> 9/10 Points
+
+## Article Summary
+
 The incompleteness of the fossil record presents challenges to paleontologists, and there is concern that fossils 
 cannot be taken as accurate representations of the populations that left them behind. This article sets out to 
 determine how incomplete the fossil record is with respect to Pleistocene benthic invertebrates in California.
@@ -23,23 +26,28 @@ likely to yield fossilized specimens of even more of the absent species. With th
 article put forth the conclusion that the fossil record is actually quite robust with respect to common species, 
 provided that they are durable and fossilize easily.
 
-2) Things you liked about the paper
+## Things you liked about the paper
 This paper is attempting to answer a difficult but important question, and I think it is designed well.
 It was a smart decision to use bivalves and gastropods as the study organisms because of their abundance and the
 relative ease with which they fossilize. Likewise, it was a clever idea to choose fossil beds that are recent enough
 to expect a lot of similarity between living and fossilized populations. I thought that the "General Implications"
 was a sound structural choice, dividing the specific details of the actual research from the bigger picture. 
 
-3) Things you didn't like about the paper
+## Things you didn't like about the paper
 This may be more of a crique about scientific publications in general, but why is the text presented in two
 narrow columns instead of one series of paragraphs? It doesn't help fit any more words onto the page, and it's very
 distracting to sort-of read the left column when one is supposed to be reading the right. In the digital age,
-there is also the issue of scrolling up and down all the time to stay on the right page, but I digress. At certain
-stages it didn't seem as though the process of including or exluding species made very much sense. For 
+there is also the issue of scrolling up and down all the time to stay on the right page, but I digress. 
+
+> Kind of a weird thing to worry about... I see what you mean though.
+
+At certain stages it didn't seem as though the process of including or exluding species made very much sense. For 
 example, in the "Comparison of the Living with the Pleistocene Fauna" section the authors mention a species that
 made it into the species pool on the basis of a single record. I'm sure every effort was made to construct the
 species pools in a consistent manner, but maybe there was an easier and more intuitive way. 
 
-4) Evaluate the graphs and figures (if any)
+> This section was a bit sparse on details. -1 Points
+
+## Evaluate the graphs and figures (if any)
 This paper has only one figure: a simple map of California and northern Mexico illustrating the study localities.
 There isn't terribly much to say about it, except that maybe it didn't need a whole page to itself. 
