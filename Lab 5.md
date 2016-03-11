@@ -1,4 +1,8 @@
-Lab 5
+## Lab 5
+
+> Good Job, 18/20
+
+````R
 source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/communityMatrix.R")
 source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/cullMatrix.R")
 DataPBDB<-downloadPBDB(Taxa=c("Bivalvia","Brachiopoda"),StartInterval="Ordovician",StopInterval="Pleistocene")
@@ -9,15 +13,22 @@ Brachiopods<-DataPBDB[which(DataPBDB[,"phylum"]=="Brachiopoda"),]
 Bivalves<-DataPBDB[which(DataPBDB[,"class"]=="Bivalvia"),]
 BrachiopodAbundance<-abundanceMatrix(Brachiopods,SampleDefinition="early_interval")
 BivalveAbundance<-abundanceMatrix(Bivalves,SampleDefinition="early_interval")
+````
 
-Problem Set 1
+## Problem Set 1
+
 1) #First, we isolate the Miocene bivalves. Then, we find how many genera have abundances greater than 0.
+
+````R
 Bivalves1<-BivalveAbundance["Miocene",]
 Bivalves2<-which(Bivalves1>0)
 length(Bivalves2)
 [1] 634
+````
 
 2) #First, we find the abundance of the dominant species. Then, we find the total abundance of every bivalve.
+
+````R
 Bivalves1<-BivalveAbundance["Pliocene",]
 Bivalves2<-which(Bivalves1>0)
 max(Bivalves2)
@@ -26,8 +37,12 @@ sum(Bivalves2)
 [1] 562450
 2266/562450
 [1] 0.004028803
+````
+
+> -1 Points. I belive where you went wrong was at Bivalves2<-which(Bivalves1>0) you needed Bivalves1[which(Bivalves1>0)]
 
 3)
+````R
 Brachiopods1<-BrachiopodAbundance["Late Ordovician",]
 Brachiopods2<-Brachiopods1[which(Brachiopods1>0)]
 sum(Brachiopods2)
@@ -35,29 +50,38 @@ sum(Brachiopods2)
 
 1-sum((Brachiopods2/6154)^2)
 [1] 0.9784588
+````
 
 4)
+```R
 Bivalves1<-BivalveAbundance["Late Cretaceous",]
 Bivalves2<-Bivalves1[which(Bivalves1>0)]
 sum(Bivalves2)
 [1] 29684
 -sum((Bivalves2/29684)*(log(Bivalves2/29684)))
 [1] 5.086654
+````
 
 5)
- Bivalves1<-BivalveAbundance["Paleocene",]
+````R
+Bivalves1<-BivalveAbundance["Paleocene",]
 Bivalves2<-Bivalves1[which(Bivalves1>0)]
 sum(Bivalves2)
 [1] 4238
 -sum((Bivalves2/4238)*(log(Bivalves2/4238)))
 [1] 4.511875
+````
 
 6)
- [1] 4.511875/5.08665
+````R
+[1] 4.511875/5.08665
 [1] 0.8870025
 #Shannon's entropy decreased by about 12%. The K/T extinction might explain the changes in diversity. 
+````
 
 7)
+
+````R
  exp(4.511875)
 [1] 91.09246
 exp(5.08665)
@@ -66,39 +90,54 @@ exp(5.08665)
 [1] 0.5628314
 #Diversity instead decreases by about 44%. This may well be a more accurate representation of the K/T
 #extinction in which many species disappeared.
+````
 
-Problem Set 2
+# Problem Set 2
+````R
 library(vegan)
 ?diversity
+````
 
 1)
+
+````R
 MioceneBivalves<-BivalveAbundance["Miocene",]
 specnumber(MioceneBivalves, MARGIN=1)
 [1] 634
+````
 
 2)
+````R
 LateOrdovicianBrachiopods<-BrachiopodAbundance["Late Ordovician",]
 diversity(LateOrdovicianBrachiopods,index="simpson")
 [1] 0.9784588
+````
 
-3) 
+3)
+````R
 CretaceousBivalves<-BivalveAbundance["Late Cretaceous",]
 diversity(CretaceousBivalves,index="shannon")
 [1] 5.086654
+````
 
 4)
+````R
 PaleoceneBivalves<-BivalveAbundance["Paleocene",]
 diversity(PaleoceneBivalves,index="shannon")
 [1] 4.511875
+````
 
-Problem Set 3 
+## Problem Set 3 
 
 1)
+> You aren't kidding!
+
+````R
 #This is a lot of text.
 MississippianBrachiopods<-BrachiopodAbundance["Mississippian",]    
 PennsylvanianBrachiopods<-BrachiopodAbundance["Pennsylvanian",]  
 EarlyOrdovicianBrachiopods<-BrachiopodAbundance["Early Ordovician",] 
-MiddleOrdovicianBrachiopods<-BrachiopodAbundance["Middle Ordovician",]                                                                   
+MiddleOrdovicianBrachiopods<-BrachiopodAbundance["Middle Ordovician",]                                                                
 LateOrdovicianBrachiopods<-BrachiopodAbundance["Late Ordovician",]        
 LlandoveryBrachiopods<-BrachiopodAbundance["Llandovery",]
 WenlockBrachiopods<-BrachiopodAbundance["Wenlock",]   
@@ -124,7 +163,6 @@ EarlyTriassicBrachiopods<-BrachiopodAbundance["Early Triassic",]
 PlioceneBrachiopods<-BrachiopodAbundance["Pliocene",]     
 PleistoceneBrachiopods<-BrachiopodAbundance["Pleistocene",] 
 OligoceneBrachiopods<-BrachiopodAbundance["Oligocene",]
-
 MississippianBivalves<-BivalveAbundance["Mississippian",]    
 PennsylvanianBivalves<-BivalveAbundance["Pennsylvanian",]  
 EarlyOrdovicianBivalves<-BivalveAbundance["Early Ordovician",] 
@@ -154,7 +192,6 @@ EarlyTriassicBivalves<-BivalveAbundance["Early Triassic",]
 PlioceneBivalves<-BivalveAbundance["Pliocene",]     
 PleistoceneBivalves<-BivalveAbundance["Pleistocene",] 
 OligoceneBivalves<-BivalveAbundance["Oligocene",]                
-
 specnumber(MississippianBrachiopods, MARGIN=1)
 specnumber(PennsylvanianBrachiopods, MARGIN=1)
 specnumber(EarlyOrdovicianBrachiopods, MARGIN=1)
@@ -184,7 +221,6 @@ specnumber(EarlyTriassicBrachiopods, MARGIN=1)
 specnumber(PlioceneBrachiopods, MARGIN=1)
 specnumber(PleistoceneBrachiopods, MARGIN=1)
 specnumber(OligoceneBrachiopods, MARGIN=1) 
-
 specnumber(MississippianBivalves, MARGIN=1)     
 specnumber(PennsylvanianBivalves, MARGIN=1)  
 specnumber(EarlyOrdovicianBivalves, MARGIN=1)  
@@ -214,6 +250,9 @@ specnumber(EarlyTriassicBivalves, MARGIN=1)
 specnumber(PlioceneBivalves, MARGIN=1)   
 specnumber(PleistoceneBivalves, MARGIN=1) 
 specnumber(OligoceneBivalves, MARGIN=1)    
+````
+
+> That works! Consider the ````apply( )```` function next time... much easier.
 
 Brachiopods
 Mississippian 314
@@ -246,12 +285,14 @@ Pliocene 23
 Pleistocene 19
 Oligocene 30
 
+````R
 EpochBrachiopods<-array(c(314,284,141,282,331,271,257,234,138,497,353,274,564,111,57,96,125,175,29,406,130,549,
 111,193,45,63,23,19,30),dimnames=list(c("Mississippian","Pennsylvanian","EarlyOrdovician","MiddleOrdovician",
 "LateOrdovician","Llandovery","Wenlock","Ludlow","Pridoli","EarlyDevonian","MiddleDevonian","LateDevonian",
 "Cisuralian","LateJurassic","Eocene","LateCretaceous","EarlyCretaceous","MiddleJurassic","Paleocene","Lopingian",
 "EarlyJurassic","Guadalupian","MiddleTriassic","LateTriassic","Miocene","EarlyTriassic","Pliocene",
 "Pleistocene","Oligocene")))
+````
 
 Bivalves
 Mississippian 99
@@ -284,6 +325,7 @@ Pliocene 534
 Pleistocene 498
 Oligocene 355
 
+````R
 EpochBivalves<-array(c(99,104,42,48,87,56,66,81,51,111,88,70,160,270,512,574,393,202,305,156,217,191,151,242,634,
 101,534,498,355),dimnames=list(c("Mississippian","Pennsylvanian","EarlyOrdovician","MiddleOrdovician",
 "LateOrdovician","Llandovery","Wenlock","Ludlow","Pridoli","EarlyDevonian","MiddleDevonian","LateDevonian",
@@ -306,11 +348,15 @@ EpochBivalves<-EpochBivalves[c("EarlyOrdovician","MiddleOrdovician","LateOrdovic
 "Lopingian","EarlyTriassic","MiddleTriassic","LateTriassic","EarlyJurassic","MiddleJurassic","LateJurassic",
 "EarlyCretaceous","LateCretaceous","Paleocene","Eocene","Oligocene","Miocene","Pliocene","Pleistocene")]
 
+
 cor(EpochBivalves,EpochBrachiopods)
 [1] -0.567194
 #Brachiopod richness is negatively correlated with bivalve richness.
+````
 
 2)
+
+````R
 SimpsonBrachiopods<-array(c(
 (diversity(MississippianBrachiopods,index="shannon")), 
 (diversity(PennsylvanianBrachiopods,index="shannon")),
@@ -404,13 +450,25 @@ GiniEpochBivalves<-GiniEpochBivalves[c("EarlyOrdovician","MiddleOrdovician","Lat
 cor(GiniEpochBivalves,GiniEpochBrachiopods)
 [1] -0.5308717
 #Brachiopod biodiversity is negatively correlated with bivalve diversity.
+````
+
+> You took a wrong turn somewhere... the correct answer is -0.23 The following is a correct version. -1 Points
+
+````R
+BivalveDiversity<-diversity(BivalveAbundance,"simpson")
+BrachiopodDiversity<-diversity(BrachiopodAbundance,"simpson")
+BivalveDiversity<-BivalveDiversity[names(BrachiopodDiversity)]
+cor(BivalveDiversity,BrachiopodDiversity)
+[1] -0.2355505
+````
 
 3)
 EpochBrachiopods
 #The Lopingian/Early Triassic barrier is the greatest drop in brachiopod richness.
 
 
-Problem Set 4
+## Problem Set 4
+````R
 subsampleIndividuals<-function(Abundance,Quota,Trials=100) {
       Richness<-vector("numeric",length=Trials)
       Abundance<-Abundance[Abundance>0]
@@ -431,14 +489,18 @@ SampleAbundances[which(SampleAbundances==min(SampleAbundances))]
 Early Ordovician 
 	    124
 StandardizedRichness<-apply(BivalveAbundance,1,subsampleIndividuals,Quota=124)
+````
 
 1) 
+````R
 BrachiopodAbundances<-apply(BrachiopodAbundance,1,sum)
 BrachiopodAbundances[which(BrachiopodAbundances==min(BrachiopodAbundances))]
 Pleistocene 
          63 
+````
 
 2)
+````R
 BrachiopodAbundances<-apply(BrachiopodAbundance,1,subsampleIndividuals,Quota=63)
 StandardBrachiopods<-BrachiopodAbundances[c("Early Ordovician","Middle Ordovician","Late Ordovician","Llandovery","Wenlock","Ludlow","Pridoli",
 "Early Devonian","Middle Devonian","Late Devonian","Mississippian","Pennsylvanian","Cisuralian","Guadalupian",
@@ -449,8 +511,11 @@ cor(EpochBrachiopods,StandardBrachiopods)
 [1] 0.8855588
 #The unstandardized and standardized richnesses differ by about 11%. Standardization, then, has had a significant
 #but not overwhelming effect on the quality of our data. 
+````
 
 3)
+
+````R
 plot(x=EpochBrachiopods,y=EpochBivalves)
 plot(x=StandardBrachiopods, y=StandardizedRichness)
 #Both plots display wide-ranging data values, which could obscure precise relationships. However, they both exhibit
@@ -460,8 +525,11 @@ plot(x=StandardBrachiopods, y=StandardizedRichness)
 #murkier relationship than the unstandardized graph. In this case, viewing only the unstandardized data might give
 #give one false confidence in the relationship between brachiopods and bivalves, and so I come to the conclusion that
 #standardizing does indeed matter.
+````
 
 4)
+
+````R
 plot(EpochBrachiopods)
 plot(EpochBivalves)
 plot(StandardizedRichness)
@@ -472,12 +540,4 @@ plot(StandardBrachiopods)
 #Cretaceous and Paleocene and conclude that our ancestors outcompeted Tyrannosaurus. Obviously, conclusions are
 #premature. Nevertheless, there is some evidence in these analyses to support the theory of bivalves outcompeting
 #brachiopods.
-
-
-
-
-
-
-
-
-
+````
