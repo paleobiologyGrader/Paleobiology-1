@@ -1,0 +1,42 @@
+Nicholas Boulanger
+Peters, Shanan E., and Foote, Michael(2002). Determinants of extinction in the fossil record.
+Nature 416, 420-424.
+
+1) Article Summary
+The fossil record is incomplete, but it is all we as paleontologists have to work with. When the subject of inquiry
+is mass extinctions, one may believe that the worldwide devastation of most life would leave clear and obvious 
+traces, but one would be wrong. This article examines in detail how our understanding of mass extinctions may be
+distorted by the fossil record. This distortion begins with the simple availability of rock: one cannot collect
+fossils from nothing, and some time periods are better represented by the stratigraphic record than others. 
+For example, If the last few million years of a species' geologic lifespan are spent in poorly preserved rock, 
+paleontologists may be forced to conclude that it went extinct before it actually did.  The authors address this
+topic further by generating a mathematical model based on observed stratigraphic preservation but a uniform 
+extinction rate over the Phanerozoic. A high agreement was observed between the model-predicted data and the 
+observed rate of genus extinction. The article puts forth two possible explanations for this agreement: one, that
+extinctions are not nearly as volatile as the fossil record indicates, and "mass extinctions" are spurious artefacts
+of irregular stratigraphic preservation; and two, that volatility in the stratigraphic record and in extinction 
+rates has the same root cause. More research is, of course, necessary to determine with greater certainty which 
+of these explanations are correct, but either way we have learned something about the stability of life across
+geologic time, at least at the genus level. 
+
+2) Things you liked about the paper
+As I have stated before, I enjoy reading papers with Nature's format, i.e. technical descriptions of the methods
+segregated from the rest of the article. Of course, the peer review system requires that every part of the
+research process be put under scrutiny, so this information has to be available somewhere, but most readers have 
+neither the interest or the means to replicate the study, so why make them read how to do so? Instead, the focus
+should be on what has been learned, and in that sense this article is a success.
+
+3) Things you didn't like about the paper
+
+4) Evaluate the graphs and figures (if any)
+This article has three figures, all of them graphs. Figure 1 depicts a series of relationships between the number of
+formations and the extinction rate. The first is a line graph, and the second and third are scatters,
+one with no lag and another with a one-stage lag on extinctions. Overall, this figure represents a fairly good
+argument for a one-stage lag on extinction rate. Figure 2 uses a similar assemblage of graphs, but they instead
+represent observed extinction rates versus the ones predicted by the mathematical model. Figure 3 is a null
+distribution of correlation coefficients between formation time series- randomly generating a temporal order
+of formations and calculating the degree of relatedness to discern how accurate the model is. All of the figures 
+have reasonable, but not outstanding, clarity. 
+
+     
+
