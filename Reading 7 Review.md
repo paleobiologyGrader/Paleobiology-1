@@ -2,7 +2,9 @@ Nicholas Boulanger
 Hendy, Austin J.W.(2009).The influence of lithification on Cenozoic marine biodiversity trends. Paleobiology,
 35(1), pp. 51-62. 
 
-1) Article Summary
+> 10/10
+
+## Article Summary
 This article describes a potential bias in the fossil record. There is a huge difference in the observed 
 diversity of benthic marine genera between thee Paleozoic and Cenozoic, even when one corrects for 
 time-averaging and other distorting environmental conditions. However, the analyses in this paper suggest that
@@ -20,20 +22,22 @@ versus Cenozoic benthic communities. The article concludes that this bias could 
 biodiversity changes observed between the Paleozoic and Cenozoic, and that further research into this issue is
 necessary to determine how influential this difference in availability is. 
 
-2) Things you liked about the paper
+## Things you liked about the paper
 Scientists are only as good as the information available to them. I like that this article is critical of the
 sources of information (namely, fossils) and not the conclusions drawn from that information. I think the article
 described in sufficient detail their methods, especially how they distinguished unlithified, poorly lithified,
 and lithified samples. 
 
-3) Things you didn't like about the paper
+## Things you didn't like about the paper
 I am not certain this paper needed to be as long as it is. I spotted a few instances in which a passage in the
 article was little more than a reiteration of a previous statement, which is expected and even laudable if the
 repeated statements were critical parts of the article's message. The repetitions in this paper seemed to be
 relatively trivial elements of the methods and results, which leads me to conclude that this paper could have 
 been shortened for  a clearer argument. 
 
-4) Evaluate the graphs and figures (if any)
+> Yes, it came across as long-winded for sure.
+
+## Evaluate the graphs and figures (if any)
 This paper has five figures, all of them graphs of some type. Figure 1 describes the relationship between 
 the number of marine invertebrate genera and time, as well as that betweenn time and the percentage of collections
 that were taken from unlithified versus lithified deposits. Figure 2 depicts the relationship between the number
