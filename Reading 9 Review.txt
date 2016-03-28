@@ -1,0 +1,39 @@
+Nicholas Boulanger
+Droser, Mary L.; Bottjer, David J.; Sheehan, Peter M.; and McGhee, George R., Jr (2000). Decoupling of taxonomic
+and ecological severity of Phanerozoic marine mass extinctions. Geology 28;675-678.
+
+1) Article Summary
+Mass extinctions are an important topic of study, both in paleobiology and in the more general context of community
+ecology. The loss of taxonomic diversity is a favorite method for evaluating the severity of mass extinctions, but 
+this study questions whether this is an appropriate quantification of the ecological consequences of extinction.
+To answer the question, the authors look at two similar mass extinctions: the Late Ordovician and the Late 
+Devonian. They evaluate the severity of these mass extinctions using a graduated structure of scales of change.
+At the first and most severe level, entire ecosystems emerge or disappear; at the fourth and least intense level,
+communities arise or disappear, or minor taxonomic changes occur within groups. This analysis found that, while
+the Late Ordovician and Late Devonian mass extinctions were very similar in respect to taxonomic losses, the 
+ecological impacts of those losses differed greatly. Taxa that suffered huge losses during the Late Ordovician
+extinction managed to recover quickly, and the Silurian was characterized by much the same ecological relationships
+as the Ordovician before it. The Late Devonian extinction, on the other hand, triggered second-level ecological
+changes in additionto the third- and fourth- level changes observed for the Late Ordovician extinction. The
+conclusion of this study is that different taxa have different ecological impacts when they go extinct. For example,
+dominant taxa like forest trees or corals affect ecosystems because of their high biomass. Keystone species,
+on the other hand, have lower biomass but disproportionate ecological impact. These conclusions emphasize the need
+for a modern conservation strategy that prioritizes taxa with high ecological impact.   
+
+
+2) Things you liked about the paper
+This paper places a reduced emphasis on quantitative analyses. This leads to a shorter paper with a more direct 
+argument: instead of data-calculations-results-interpretation, research can focus on a shorter data-interpretation
+path. On one hand, this is somewhat refreshing because some scientifically significant concepts are difficult to 
+quantify. 
+
+
+3) Things you didn't like about the paper
+On the other hand, the reduced use of quantitative data does have drawbacks; one of the more obvious is that the
+findings are harder to disprove and validate. Another drawback is that it is harder to apply this technique to 
+different systems. There's a reason science almost always demands rigorous quantified data. 
+
+4) Evaluate the graphs and figures (if any) 
+This article has one rather strange figure, a line-environment diagram for environmental and temporal distribution
+of Paleozoic and Cambrian fauna. I don't like this one at all. It may have been clearer if it were turned clockwise,
+or split into two separate figures. 
