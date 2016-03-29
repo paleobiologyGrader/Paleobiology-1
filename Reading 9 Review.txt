@@ -1,8 +1,12 @@
 Nicholas Boulanger
+
 Droser, Mary L.; Bottjer, David J.; Sheehan, Peter M.; and McGhee, George R., Jr (2000). Decoupling of taxonomic
 and ecological severity of Phanerozoic marine mass extinctions. Geology 28;675-678.
 
-1) Article Summary
+> 9/10, I felt that your sections other than the summary were a bit on the sparse side so I took off a point.
+
+## Article Summary
+
 Mass extinctions are an important topic of study, both in paleobiology and in the more general context of community
 ecology. The loss of taxonomic diversity is a favorite method for evaluating the severity of mass extinctions, but 
 this study questions whether this is an appropriate quantification of the ecological consequences of extinction.
@@ -21,19 +25,21 @@ on the other hand, have lower biomass but disproportionate ecological impact. Th
 for a modern conservation strategy that prioritizes taxa with high ecological impact.   
 
 
-2) Things you liked about the paper
+## Things you liked about the paper
+
 This paper places a reduced emphasis on quantitative analyses. This leads to a shorter paper with a more direct 
 argument: instead of data-calculations-results-interpretation, research can focus on a shorter data-interpretation
 path. On one hand, this is somewhat refreshing because some scientifically significant concepts are difficult to 
 quantify. 
 
+## Things you didn't like about the paper
 
-3) Things you didn't like about the paper
 On the other hand, the reduced use of quantitative data does have drawbacks; one of the more obvious is that the
 findings are harder to disprove and validate. Another drawback is that it is harder to apply this technique to 
 different systems. There's a reason science almost always demands rigorous quantified data. 
 
-4) Evaluate the graphs and figures (if any) 
+## Evaluate the graphs and figures (if any) 
+
 This article has one rather strange figure, a line-environment diagram for environmental and temporal distribution
 of Paleozoic and Cambrian fauna. I don't like this one at all. It may have been clearer if it were turned clockwise,
 or split into two separate figures. 
