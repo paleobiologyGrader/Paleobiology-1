@@ -1,0 +1,142 @@
+Nicholas Boulanger
+Lab Exercise 9
+
+source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/communityMatrix.R")
+
+CretaceousMap<-downloadPaleogeography(Age=66)
+ModernMap<-downloadPaleogeography(Age=0)
+
+Problem Set 1
+
+1) North America is currently West of its Cretaceous position.
+
+2) 
+help(plot)
+help(rgb)
+col=rgb() specifies that the colors should use the rgb() color function. rgb() allows for any combination
+of the red, green, and blue primary colors, as well as an opacity value. lty defines the type of line used, and
+add= tells R to plot the map on top of the previous one. 
+
+3)
+AlbianMap<-downloadPaleogeography(Age=110)
+
+4)
+plot(AlbianMap,col=rgb(0,1,0,0.33),lty=0.01,add=TRUE)
+
+5)
+Since the Albian, the Eastern Hemisphere has moved west, but not north or south.
+
+6)
+Since the Albian, the Western Hemisphere has moved west, but not north or south. 
+
+Problem Set 2
+
+1) 
+BaseMap<-downloadPaleogeography(Age=56)
+plot(BaseMap,col=rgb(0,1,0,0.33),lty=0.01)
+
+2)
+Anthozoa<-downloadPBDB(Taxa=c("Anthozoa"),StartInterval="Paleocene",StopInterval="Eocene")
+
+3)
+dim(Anthozoa)
+[1] 2847   26
+2847 occurences.
+
+4)
++occurrence_no 
+which occurrence this is.
++record_type  
+What kind of record this is: an occurrence.
++reid_no 
+If this occurrence was reidentified, this identifies that reidentification.
++flags  
+Whether there are any notifying flags for this occurrence.         
++collection_no
+Which collection this occurrence came from.
++identified_name
+This object's taxonomic name.
++identified_rank
+The rank for the identified name.
++identified_no
+ The unique identifier of the name to which this object was assigned. 
++difference
+IF the identified name and accepted name are different, here's why. 
++accepted_name 
+The accepted taxonomic name of this occurrence.
++accepted_rank  
+The taxonomic rank of the accepted name.
++accepted_no    
+The unique identifier of the accepted taxonomic name in this database.
++early_interval 
+The interval that begins the geologic time range for this occurrence.
++late_interval  
+The interval that ends the geologic time range for this occurrence.
++max_ma
+ The early bound of this occurrence's geologic time range.     
++min_ma  
+The late bound of this occurrence's geologic time range.       
++reference_no 
+The identifier of the reference where the database got this data.
++paleomodel   
+The primary model specified by the parameter pgm for evaluating paleocoordinates.
++paleolng    
+paleolongitude for the paleocoordinates.
++paleolat    
+paleolatitude for the paleocoordinates.   
++geoplate   
+which geological plate this occurrence lies on.
++
+     phylum    } 
+      class    }  
+     order     } The taxonomic hierarchy for this occurrence.     
+[25] family    }
+       genus   }
+
+5) 
+help(points)
+Anthozoalat<-Anthozoa[,"paleolat"]
+Anthozoalong<-Anthozoa[,"paleolng"]
+points(Anthozoalong,Anthozoalat)
+
+6)
+Most of the Anthozoan occurrences in the Eastern Hemisphere are in central Europe. This indicates that Anthozoans
+are primarily freshwater organisms, simply because they are generally not found in the oceans. Central Europe,
+then, must have had abundant freshwater. 
+
+Problem Set 3
+1)
+Hooves<-downloadPBDB(Taxa=c("Perissodactyla"),StartInterval="Paleogene",StopInterval="Paleogene")
+
+2)
+Perissodactyls are mammals with an odd number of toes. They are generally grazers with simple stomachs.
+Rhinos, pigs, and horses are perissodactyls.
+
+3)
+Piggy<-subset(Hooves,Hooves[,"collection_no"]==112723)
+Piggy
+
+4)
+The geoplate is 501. 
+PaleogeneMap<-downloadPaleogeography(Age=50)
+plot(PaleogeneMap)
+points(70.7,2.76)
+Geoplate 501 is in modern-day northern India. 
+
+
+5)
+Piggy<-subset(Hooves,Hooves[,"collection_no"]==112723)
+
+6)
+India begins near Africa and Antarctica, then gradually travels northeast until it collides with southern Asia.
+
+7)
+Using the PBDB Navigator Tool, I found:
+1. Perissodactyl fossils first appear in North America, far from both India and China. 
+2. Perissodactyl fossils occur in both India and China before there is a land bridge between the two.
+I also posit that:
+3. Perissodactyls are not good long-distance swimmers. 
+
+Therefore, the only plausible explanation is that region x (geoplate 501) and China both received perissodactyls
+from a third place. 
+
