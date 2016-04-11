@@ -1,0 +1,41 @@
+Nicholas Boulanger
+Payne, J.L., and Finnegan, S., 2007. The effect of geographic range on extinction risk during background and
+mass extinction. PNAS v.104, n.25, p.10506-10511.
+
+
+Article Summary
+This article sets out to answer several questions related to mass extinctions. The authors performed logistic
+regression analysis on marine benthic invertebrate data from the Paleontology Database to determine whether 
+geographic range size acts as a buffer against extinction. They found that geographic range size is positively
+correlated with genus-level survival, and that species richness does not influence this advantage. The picture
+is still somewhat cloudy, however. Mass extinction events are not as picky about what survives; therefore,
+extinctions of geographically widespread genera are more likely to be driven extinct by widespread ecological and
+environmental disruption than by local changes. Furthermore, when extinction likelihood is high, the influence
+of geographic range size wanes.
+
+Things you liked about the paper
+I can't fault their methods or results. Their use of logistic regression and log-odds is appropriate, and I
+believe that they compensated for potentially confounding factors, such as heterogeneity in the fossil record,
+in a logical manner. 
+
+
+Things you didn't like about the paper
+Althought the question of this article could be interesting, I could barely stand reading it to the end. 
+A good scientific paper is essentially storytelling backed  up by sound data. To all appearances, the sound 
+data is here, but there's no story. Instead, there's a series of very complicated and technical explanations of 
+things that are often only tangentially related to the research itself. For example, the first paragraph of the
+'Results' section contains no results. Instead, there's an extremely long-winded explanation of how logistic
+regression works, and why the authors used it, and what log-odds of zero mean- the sort of thing that most
+scientists already know, and that nobody needs a refresher on in the middle of trying to read about some research
+on mass extinctions. This style continues for the rest of the paper. The sections just sort of ramble on, without a
+sense of chronological or conceptual progress. Most of the sentences are extremely long and contain multiple 
+statements separated by commas and semicolons. This unnecessarily adds complexity to otherwise simple ideas. 
+It might have helped if there were more paragraphs separating essential chunks of information, but I think that the
+authors just needed to have a better grasp of word choice, sentence structure, and other tenets of successful 
+writing in the English language. This is absolutely scientific writing at its worst.  
+
+Evaluate the graphs and figures (if any)
+This article contains three graphs and one table. Like the text they support, the graphs do not give up information
+easily. Figure 1 is a timeline of trends in the selectivity of extinctions; in the caption readers are treated
+to short course in evaluating log-odds AGAIN. It's almost insulting. Why didn't they just leave it in the Data and
+Methods, under "logistic regression", where it belongs?  
