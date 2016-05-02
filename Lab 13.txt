@@ -1,0 +1,371 @@
+Nicholas Boulanger
+Penultimate Lab Exercise
+
+alpha diversity=average diversity of each sample
+gamma diversity= total diversity of all samples
+beta= gamma-alpha 
+
+source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/communityMatrix.R")
+source("https://raw.githubusercontent.com/aazaff/paleobiologyDatabase.R/master/cullMatrix.R")
+
+LateOrdovician<-downloadPBDB(Taxa="Animalia",StartInterval="Sandbian",StopInterval="Hirnantian")
+EarlySilurian<-downloadPBDB(Taxa="Animalia",StartInterval="Llandovery",StopInterval="Wenlock")
+
+LateOrdovician<-cleanRank(LateOrdovician,"genus")
+EarlySilurian<-cleanRank(EarlySilurian,"genus")
+
+Epochs<-downloadTime("international epochs")
+
+LateOrdovician<-constrainAges(LateOrdovician,Epochs)
+EarlySilurian<-constrainAges(EarlySilurian,Epochs)
+
+LateOrdovician<-macrostratMatch(LateOrdovician)
+EarlySilurian<-macrostratMatch(EarlySilurian)
+
+OrdovicianMatrix<-presenceMatrix(LateOrdovician,SampleDefinition="unit_name",TaxonRank="genus")
+SilurianMatrix<-presenceMatrix(EarlySilurian,SampleDefinition="unit_name",TaxonRank="genus")
+
+OrdovicianMatrix<-cullMatrix(OrdovicianMatrix,2,10)
+SilurianMatrix<-cullMatrix(SilurianMatrix,2,10)
+
+Problem Set 1
+
+1)
+dim(OrdovicianMatrix)
+[1]  38 211
+dim(SilurianMatrix)
+[1]  48 423
+
+Gamma diversity is 211 for the Ordovician, and 423 for the Silurian. 
+
+2) 
+mean(rowSums(OrdovicianMatrix))
+[1] 26.60526
+mean(rowSums(SilurianMatrix))
+[1] 42.79167
+
+
+
+Alpha diversity is about 26.6 for the Ordovician and 42.8 for the Silurian. 
+
+3)
+211-26.60526
+[1] 184.3947
+423-42.79167
+[1] 380.2083
+
+Beta diversity is about 184.4 for the Ordovician and 380.2 for the Silurian.
+
+4)
+42.79167-26.60526
+[1] 16.18641
+380.2083-184.3947
+[1] 195.8136
+423-211
+[1] 212
+
+
+Alpha diversity increases by about 16. Gamma diversity increases by 212. Beta diversity increases by about 196. 
+
+5)
+Alpha Diversity:
+Ordovician  26.60526/211 [1] 0.1260913
+Silurian  42.79167/423 [1] 0.1011623
+
+Beta Diversity:
+Ordovician 184.3947/211 [1] 0.8739085
+Silurian 380.2083/423 [1] 0.8988376
+
+Alpha diversity decreases over the Ordovician/Silurian boundary. Beta diversity increases.
+What this means is that Silurian fauna are more cosmopolitan than Ordovician fauna, because a single "province"
+ has less in common with other places. This is in keeping with what we learned about Silurian provincialism.
+
+6)
+One of the drawbacks of using percentages is that it reduces the capacity for direct comparison. While the Silurian
+percentage indicates less biodiversity, the gamma diversity is still much higher- a fact which is hidden by the
+percentages. 
+
+Problem Set 2
+1)
+LatePermian<-
+EarlyTriassic<-
+LateCretaceous<-
+EarlyPaleogene<-
+
+LatePermian<-downloadPBDB(Taxa="Animalia",StartInterval="Guadalupian",StopInterval="Lopingian")
+EarlyTriassic<-downloadPBDB(Taxa="Animalia",StartInterval="Induan",StopInterval="Ladinian")
+LateCretaceous<-downloadPBDB(Taxa="Animalia",StartInterval="Santonian",StopInterval="Maastrichtian")
+EarlyPaleogene<-downloadPBDB(Taxa="Animalia",StartInterval="Danian",StopInterval="Lutetian")
+
+LatePermian<-cleanRank(LatePermian,"genus")
+EarlyTriassic<-cleanRank(EarlyTriassic,"genus")
+LateCretaceous<-cleanRank(LateCretaceous,"genus")
+EarlyPaleogene<-cleanRank(EarlyPaleogene,"genus")
+
+Epochs<-downloadTime("international epochs")
+
+LatePermian<-constrainAges(LatePermian,Epochs)
+EarlyTriassic<-constrainAges(EarlyTriassic,Epochs)
+LateCretaceous<-constrainAges(LateCretaceous,Epochs)
+EarlyPaleogene<-constrainAges(EarlyPaleogene,Epochs)
+
+LatePermian<-macrostratMatch(LatePermian)
+EarlyTriassic<-macrostratMatch(EarlyTriassic)
+LateCretaceous<-macrostratMatch(LateCretaceous)
+EarlyPaleogene<-macrostratMatch(EarlyPaleogene)
+
+PermianMatrix<-presenceMatrix(LatePermian,SampleDefinition="unit_name",TaxonRank="genus")
+TriassicMatrix<-presenceMatrix(EarlyTriassic,SampleDefinition="unit_name",TaxonRank="genus")
+CretaceousMatrix<-presenceMatrix(LateCretaceous,SampleDefinition="unit_name",TaxonRank="genus")
+PaleogeneMatrix<-presenceMatrix(EarlyPaleogene,SampleDefinition="unit_name",TaxonRank="genus")
+
+PermianMatrix<-cullMatrix(PermianMatrix,2,10)
+TriassicMatrix<-cullMatrix(TriassicMatrix,2,10)
+CretaceousMatrix<-cullMatrix(CretaceousMatrix,2,10)
+PaleogeneMatrix<-cullMatrix(PaleogeneMatrix,2,10)
+
+
+2)
+Gamma:
+dim(PermianMatrix)
+[1]  22 311
+dim(TriassicMatrix)
+[1]  13 158
+dim(CretaceousMatrix)
+[1]  96 774
+dim(PaleogeneMatrix)
+[1]  120 1031
+
+Alpha:
+mean(rowSums(PermianMatrix))
+[1] 57.63636
+mean(rowSums(TriassicMatrix))
+[1] 35.15385
+mean(rowSums(CretaceousMatrix))
+[1] 57.90625
+mean(rowSums(PaleogeneMatrix))
+[1] 52.83333
+
+Beta:
+311-57.63636
+[1] 253.3636
+
+158-35.15385
+[1] 122.8461
+
+774-57.90625
+[1] 716.0938
+
+1031-52.83333
+[1] 978.1667
+
+3)
+Alpha/Gamma:
+57.63636/311
+[1] 0.1853259
+
+35.15385/158
+[1] 0.2224927
+
+57.90625/774
+[1] 0.07481428
+
+52.83333/1031
+[1] 0.05124474
+
+Beta/Gamma:
+253.3636/311
+[1] 0.814674
+
+122.8461/158
+[1] 0.777507
+
+716.0938/774
+[1] 0.9251858
+
+978.1667/1031
+[1] 0.9487553
+
+4)
+Alpha:
+mean(rowSums(PermianMatrix))
+[1] 57.63636
+mean(rowSums(TriassicMatrix))
+[1] 35.15385
+mean(rowSums(CretaceousMatrix))
+[1] 57.90625
+mean(rowSums(PaleogeneMatrix))
+[1] 52.83333
+
+Alpha diversity decreases over each event. 
+
+5)
+Alpha/Gamma:
+57.63636/311
+[1] 0.1853259
+
+35.15385/158
+[1] 0.2224927
+
+57.90625/774
+[1] 0.07481428
+
+52.83333/1031
+[1] 0.05124474
+
+Alpha/Gamma increases over the Permo-Triassic, but decreases over the K-T. 
+
+Problem Set 3
+
+1)
+
+
+LateOrdovician<-downloadPBDB(Taxa="Animalia",StartInterval="Sandbian",StopInterval="Hirnantian")
+EarlySilurian<-downloadPBDB(Taxa="Animalia",StartInterval="Llandovery",StopInterval="Wenlock")
+LatePermian<-downloadPBDB(Taxa="Animalia",StartInterval="Guadalupian",StopInterval="Lopingian")
+EarlyTriassic<-downloadPBDB(Taxa="Animalia",StartInterval="Induan",StopInterval="Ladinian")
+LateCretaceous<-downloadPBDB(Taxa="Animalia",StartInterval="Santonian",StopInterval="Maastrichtian")
+EarlyPaleogene<-downloadPBDB(Taxa="Animalia",StartInterval="Danian",StopInterval="Lutetian")
+
+LateOrdovician<-cleanRank(LateOrdovician,"genus")
+EarlySilurian<-cleanRank(EarlySilurian,"genus")
+LatePermian<-cleanRank(LatePermian,"genus")
+EarlyTriassic<-cleanRank(EarlyTriassic,"genus")
+LateCretaceous<-cleanRank(LateCretaceous,"genus")
+EarlyPaleogene<-cleanRank(EarlyPaleogene,"genus")
+
+Epochs<-downloadTime("international epochs")
+
+LateOrdovician<-constrainAges(LateOrdovician,Epochs)
+EarlySilurian<-constrainAges(EarlySilurian,Epochs)
+LatePermian<-constrainAges(LatePermian,Epochs)
+EarlyTriassic<-constrainAges(EarlyTriassic,Epochs)
+LateCretaceous<-constrainAges(LateCretaceous,Epochs)
+EarlyPaleogene<-constrainAges(EarlyPaleogene,Epochs)
+
+
+LateOrdovician<-macrostratMatch(LateOrdovician)
+EarlySilurian<-macrostratMatch(EarlySilurian)
+LatePermian<-macrostratMatch(LatePermian)
+EarlyTriassic<-macrostratMatch(EarlyTriassic)
+LateCretaceous<-macrostratMatch(LateCretaceous)
+EarlyPaleogene<-macrostratMatch(EarlyPaleogene)
+
+OrdovicianMatrix<-abundanceMatrix(LateOrdovician,SampleDefinition="unit_name",TaxonRank="genus")
+SilurianMatrix<-abundanceMatrix(EarlySilurian,SampleDefinition="unit_name",TaxonRank="genus")
+PermianMatrix<-abundanceMatrix(LatePermian,SampleDefinition="unit_name",TaxonRank="genus")
+TriassicMatrix<-abundanceMatrix(EarlyTriassic,SampleDefinition="unit_name",TaxonRank="genus")
+CretaceousMatrix<-abundanceMatrix(LateCretaceous,SampleDefinition="unit_name",TaxonRank="genus")
+PaleogeneMatrix<-abundanceMatrix(EarlyPaleogene,SampleDefinition="unit_name",TaxonRank="genus")
+
+OrdovicianMatrix<-cullMatrix(OrdovicianMatrix,2,10)
+SilurianMatrix<-cullMatrix(SilurianMatrix,2,10)
+PermianMatrix<-cullMatrix(PermianMatrix,2,10)
+TriassicMatrix<-cullMatrix(TriassicMatrix,2,10)
+CretaceousMatrix<-cullMatrix(CretaceousMatrix,2,10)
+PaleogeneMatrix<-cullMatrix(PaleogeneMatrix,2,10)
+
+library(vegan)
+
+2)
+Gamma:
+diversity(apply(OrdovicianMatrix, 2, sum))
+[1] 4.214808
+ diversity(apply(SilurianMatrix, 2, sum))
+[1] 5.336366
+ diversity(apply(PermianMatrix, 2, sum))
+[1] 5.007539
+ diversity(apply(TriassicMatrix, 2, sum))
+[1] 4.570008
+ diversity(apply(CretaceousMatrix, 2, sum))
+[1] 5.733597
+ diversity(apply(PaleogeneMatrix, 2, sum))
+[1] 5.982461
+
+
+Alpha:
+mean(diversity(OrdovicianMatrix, index = "shannon"))
+[1] 2.775078
+mean(diversity(SilurianMatrix, index = "shannon"))
+[1] 3.214317
+mean(diversity(PermianMatrix, index = "shannon"))
+[1] 3.311213
+mean(diversity(TriassicMatrix, index = "shannon"))
+[1] 2.962167
+mean(diversity(CretaceousMatrix, index = "shannon"))
+[1] 3.320182
+mean(diversity(PaleogeneMatrix, index = "shannon"))
+[1] 3.462795
+
+Beta:
+Ordovician/Silurian
+4.214808-2.775078
+[1] 1.43973
+ 5.336366-3.214317
+[1] 2.122049
+Permian/Triassic
+ 5.007539-3.311213
+[1] 1.696326
+ 4.570008-2.962167
+[1] 1.607841
+Cretaceous/Paleogene
+ 5.733597-3.320182
+[1] 2.413415
+ 5.982461-3.462795
+[1] 2.519666
+
+3)
+gamma:100%
+
+Alpha/Gamma:
+Ordovician/Silurian
+2.775078/4.214808
+[1] 0.6584115
+ 3.214317/5.336366
+[1] 0.6023419
+Permian/Triassic
+ 3.311213/5.007539
+[1] 0.6612456
+ 2.962167/4.570008
+[1] 0.6481755
+Cretaceous/Paleogene
+ 3.320182/5.733597
+[1] 0.5790749
+ 3.462795/5.982461
+[1] 0.5788245
+
+Beta/Gamma:
+Ordovician/Silurian
+1.43973/4.214808
+[1] 0.3415885
+> 2.122049/5.336366
+[1] 0.3976581
+Permian/Triassic
+> 1.696326/5.007539
+[1] 0.3387544
+> 1.607841/4.570008
+[1] 0.3518245
+Cretaceous/Paleogene
+> 2.413415/5.733597
+[1] 0.4209251
+> 2.519666/5.982461
+[1] 0.4211755
+
+
+
+4)
+Alpha diversity decreases over the Ordovician/Silurian and the K-T, but increases over the Permo-Triassic. 
+
+5)
+Alpha diversity, when measured as a percentage, decreases over every mass extinction boundary.  
+
+
+Problem 4)
+Based on my results, Beta diversity tends to increase over mass extinctions. However, it doesn't
+increase over every extinction boundary, so I don't think it should be accepted as a general rule. 
+ 
+
+
+
+
+
