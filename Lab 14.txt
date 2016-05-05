@@ -1,0 +1,109 @@
+Nicholas Boulanger
+Lab 14
+
+pyr<-read.csv("https://raw.githubusercontent.com/aazaff/teachPaleobiology/master/Lab14Files/pyritized.csv")
+colnames(pyr)
+head(pyr)
+
+pyr[which(pyr[,"docid"]==unique(pyr[,"docid"])[3]),4]
+taxa<-read.csv("https://raw.githubusercontent.com/aazaff/teachPaleobiology/master/Lab14Files/taxa.csv")
+
+count_uses<-function (taxon_list, clip, sentences){
+    # arguments: vector of taxa, nlp sentences table, amount to truncate end of taxon names
+    result<-array(dim=c(length(taxon_list),2))
+    for (i in 1:length(taxon_list)) {
+       teststr<-as.character(taxon_list[i]) #deals with weird type issues
+      result[i,1]<-substr(teststr,1,nchar(teststr)-clip) #trims off as many characters as specified and puts it into the table
+       dummy<-grep(result[i,1],sentences[,"words"],ignore.case=TRUE) #searches all sentences in the table for the resulting string
+       result[i,2]<-length(dummy) #puts the number of matches into the table
+    }
+    return(data.frame(string=result[,1],matches=as.numeric(result[,2])))
+}
+
+counts<-count_uses(taxa[,"taxon_name"],2,pyr) #change the 0 to whatever you like
+counts[order(-counts[,"matches"]),] #sort into descending order of frequency
+
+Problem Set 1
+power<-sort(counts[,"matches"],decreasing=TRUE)
+
+ring<-counts[rev(order(counts[,"matches"])),]
+
+ring[(1:20),]
+TopTwenty<-c(
+
+10607,       
+12253,    
+10892,   
+11694,     
+10782,   
+10574,     
+3360,      
+12505,     
+11726,      
+10647,      
+15439,   
+11387,     
+10969,     
+10267,     
+15001,   
+14492, 
+5611, 
+4938,  
+1488,      
+4617      
+)
+
+taxa[TopTwenty,]
+
+taxon_no     taxon_rank taxon_name parent_no             COMMON NAME(S)
+10607    98959       suborder       Lari     36640     skuas, gulls, terns
+12253    63631          order       Cete     67573     whales
+10892    39512       suborder      Ralli     39454     crane-like birds
+11694    39860       subclass     Theria     67561     placental mammals and marsupials
+10782   103970       suborder       Pici     39434     toucans, honeyguids, and woodpeckers
+10574    36616          class       Aves     64113     Birds
+3360    329103       subclass      Acera     56637     Unknown
+12505   159623 unranked clade      Ferae    192307     carnivora and pangolins
+11726   139829          order      Ferae    183662     carnivora and pangolins
+10647   145782       suborder      Alcae     36640     auks
+15439    67095         phylum    Silicea     67091     siliceous sponges
+11387    66478 unranked clade     Suchia     54991     crocodile-like archosaurs
+10969    98910       suborder      Scopi     39633     hammerkop (type of bird)
+10267    38086         family     Boidae     38083     boas
+15001     3603          class   Calcarea      2894     calcareous sponges
+14492   129759       subclass Articulata     31590     sea lilies (crinoids)
+5611    123646          order Articulata     26322     brachiopods?
+4938     55005          order Productida     65923     brachiopods
+1488     70715         family     Apidae    255345     bees
+4617    155665       subclass      Acari     19008     mites and ticks  
+
+birds are not likely candidates for pyritization (or fossilization in any case), and are thus probably bad data.
+Brachiopods and calcaerous sponges are good candidates, however, because they can actually tolerate the anoxic
+environments required for pyritization. 
+
+Problem Set 2
+
+my_taxa<-read.csv("C:\\Users\\Nicholas\\Documents\\AAA Nicholas Documents\\Paleobiology\\my_taxa.csv")
+
+my_counts<-count_uses(my_taxa[,"taxon_name"],0,pyr)
+
+my_counts[order(-my_counts[,"matches"]),]
+my_counts[order(-my_counts[,"matches"]),]
+    string matches
+5     tree       5
+1     bird       2
+4 dinosaur       1
+2      bug       0
+3   lizard       0
+6  reptile       0
+7     frog       0
+8    snake       0
+9 kangaroo       0
+
+I was looking for common names of familiar macrofauna. This list is somewhat similar to the truncated formal
+names in that many of them are 0, but otherwise I would trust the truncated formal names much more. If nothing
+else, the sample sizes are higher for formal names. Additionally, I would note that "tree" can be used to refer
+to a phylogenetic tree, or a tree of computational decisions. Mentions of the word "tree" in the 'normal' context
+would probably be lower. 
+
+
