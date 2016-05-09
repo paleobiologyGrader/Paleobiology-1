@@ -2,7 +2,7 @@ Nicholas Boulanger
 Sakamoto, M., Benton, M.J., and Venditti, C. (2016). Dinosaurs in decline tens of millions of years before their
 final extinction. PNAS Early Edition p. 1-5.
 
-1) Article Summary
+## Article Summary
 This paper evaluates the hypothesis that the dinosaurs went into decline before the Chicxulub asteroid impact 66
 million years ago. According to the authors, this question had not yeet been solved because of improper methodology.
 Specifically, the approach taken by previous papers was not explicitly phylogenetic, and did not consider speciation
@@ -21,7 +21,7 @@ could have been caused by  geographic range size restrictions, climate change, o
 rapidly diversifying new taxa. 
 
 
-2) Things you liked about the paper
+## Things you liked about the paper
 This paper is very confident and very direct. For example, there is a "significance" box at the end of the first 
 page that serves as a further-abbreviated abstract to make absolutely clear what the argument is. Even the title
 is aggressive in asserting the paper's final conclusion. The conclusion is definitely worth defending, too; there
@@ -29,7 +29,7 @@ is very strong evidence presented that dinosaurs were losing their thrones long 
 In some ways this level of directness might be necessary. After all, the 
 authors are confronting a big issue in dinosaur science, and their results are fairly unorthodox. 
 
-3) Things you didn't like about the paper
+## Things you didn't like about the paper
 On the other hand, perhaps the authors have gone too far. There isn't a lot written here about potential limits
 or caveats to this study, which is something every paper needs. It's not enough for the authors to just say "our
 research is flawless", they need to back it up with an assessment of what could have gone wrong, and what they did
@@ -37,7 +37,9 @@ about it. Furthermore, if their results are valid, there may be alternative expl
 of speciation and extinction; there isn't much on that subject here either. In particular, I think they should 
 have elaborated on the effects of ecological limits on speciation, and on the question of sea level rise.
 
-4) Evaluate the graphs and figures (if any)
+> I and many of your peers felt similarly, they do present an overly one-sided look at the issue.
+
+## Evaluate the graphs and figures (if any)
 There are three figures depicting the linear patterns of net speciation. Figure 1 is  theoretical model explaining
 how their analysis was set up and what their predictions were. Figure 2 is a pair of graphs of the speciation 
 slowdowns of the various dinosaur clades, and Figure 3 is the results for net speciation, as well as a diagram of
