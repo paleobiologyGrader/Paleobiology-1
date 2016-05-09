@@ -3,9 +3,11 @@ Reading Review 10
 Bambach, Richard K., Knoll, Andrew H., and Wang, Steve C (2004). Origination, extinction, and mass depletions
 of marine diversity. Paleobiology 30(4), pp. 522-542.
 
-1) Article Summary
+> 9/10
+
+## Article Summary
 This paper sets out to refine the definition of 'mass extinction'. Five events have typically been given that name:
-the end-Ordovician,the Late Devonian, the end-Permian,the end-Triassic, and the end-Cretaceous.Diversity is the 
+the end-Ordovician,the Late Devonian, the end-Permian,the end-Triassic, and the end-Cretaceous. Diversity is the 
 product of both extinction and origination: in order for diversity to drop, either extinction must be high or 
 origination must be low. The size of an extinction event is also relative. For example, losing one genus is a 
 background event in a community with a thousand genera, but a devastating mass extinction in a community with two.
@@ -23,8 +25,10 @@ than high extinction, and their magnitude is in keeping with a continuous distri
 other mass extinctions do represent significant outliers from continous background extinction and from their local
 conditions. Thus, there is a special class of mass extinctions, but it contains three, not five, members.     
  
+> Nice and concise summary.
 
-2) Things you liked about the paper
+## Things you liked about the paper
+
 I think the subheadings in this paper do a good job of separating ideas from one another- a necessary job in a paper
 this long. I had taken the idea of mass extinctions for granted; I am glad that these researchers didn't. In
 particular, I hadn't thought very much about the equilibrium between extinction and origination, and that an 
@@ -33,7 +37,8 @@ this paper is a good thing. That is, after all, how knowledge advances. Addition
 referenced elsewhere in the paper in a thoughtful manner to keep the reader focussed on whatever is being discussed.
 I found that helpful.   
 
-3) Things you didn't like about the paper
+## Things you didn't like about the paper
+
 While the subheading format was a good way of separating major ideas, within and between individual paragraphs ideas
 seem to wander a bit. The digressions were interesting and certainly contributed to the validity of the ideas
 the paper was presenting, but I found myself continually distracted from the main 'story' the authors were trying
@@ -41,7 +46,10 @@ to tell. Perhaps tidbits, like the "side issue" of large-magnitude proportional 
 be placed nearer the end of the paper. Better yet, "side issues" like that could lead to a full paper in their own
 right, where they might better get the attention and recognition they deserve.  
 
-4) Evaluate the graphs and figures (if any)
+> Stylistic and formatting issues aren't very substantive critiques.
+
+## Evaluate the graphs and figures (if any)
+
 There are nine figures in this article. Because that's too many to give each its own evaluation, and because they
 are all relatively similar, I will just discuss some main themes, then go on to specifics only if they are
 pertinent. Relationships, usually between extinction and origination or between genus diversity and time, are 
