@@ -2,7 +2,10 @@ Nicholas Boulanger
 Benton, Michael J. The Red Queen and the Court Jester: Species Diversity and the Role of Biotic and Abiotic 
 Factors Through Time: Science v.323.
 
-Article Summary
+> 10/10
+
+## Article Summary
+
 Evolution can be driven by biotic or abiotic factors. The Red Queen model states that evolution is the 
 byproduct of competitive interactions between organisms. Conversely, the Court Jester model posits that evolution
 only occurs as the result of changes in the physical environment. These models are not necessarily mutually
@@ -24,7 +27,8 @@ by studying sister taxa. Overall, the review comes to the conclusion that both t
 models are useful; the Red Queen is stronger at the local, individual and community level, while the Court 
 Jester is stronger over large geographic regions and long stretches of geologic time. 
 
-Things you liked about the paper
+## Things you liked about the paper
+
 I like this paper because it opens opportunities for dialogue between different scientific disciplines,
 like paleontology and ecology. It also acknowledges throughout the text the difficult truth that life is complex
 and pluralistic. Scientific debates almost never end with one side being proven unequivocally right and the other
@@ -34,12 +38,14 @@ paragraphs under a heading, and ideas flow naturally from one to the next. I not
 throughout the paper: phrases like "the slow dance of the continents" or "the great blossoming of flowering plants".
 They're not exactly scientific statements, but I think they help tell a story and make the reader actually care.
 
+## Things you didn't like about the paper
 
-Things you didn't like about the paper
 I enjoyed reading this paper immensely. There is nothing in it that I can reasonably find fault with. 
 
+> Haha, sounds fair enough.
 
-Evaluate the graphs and figures (if any)
+## Evaluate the graphs and figures (if any)
+
 This article has three figures and one table. Figure 1 is a graph of the temporal and environmental scales
 at which the Court Jester or the Red Queen prevails. It clearly depicts the Red Queen triumphing at short-term
 and local scales, and the Court Jester at longer and larger spacial and temporal intervals. Figure 2 is a graph
